@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+
+#Usage: git-latex-diff-compile   filename.tex   revision
+
+if [ $# != 3 ]
+then
+ echo "Usage: git-latex-diff-compile   filename.tex   revision   output_filename.pdf"
+ exit
+fi
+
+
+
+
+filename=$1
+revision=$2
+output_filename=$3
+
+latexdiffcite git  $filename $revision -o git_latex_diff_temp.tex
+pdflatex git_latex_diff_temp.tex
+pdflatex git_latex_diff_temp.tex
+bibtex  git_latex_diff_temp.tex
+bibtex  git_latex_diff_temp.tex
+pdflatex git_latex_diff_temp.tex
+pdflatex git_latex_diff_temp.tex
+pdflatex git_latex_diff_temp.tex
+
+mv git_latex_diff_temp.pdf $output_filename
+rm git_latex_diff_temp*
