@@ -1,7 +1,7 @@
 # git-latex-diff-compile
 
 This command is a very thin and stupid wrapper around latexdiffcite https://pypi.python.org/pypi/latexdiffcite
-It just runs that command to generate a latex diff and then 
+It just runs that command to generate a latex diff and then compiles the resulting latex assuming that you want to use pdflatex and bibtex.
 
 ## Installation
 
