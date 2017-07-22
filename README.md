@@ -11,7 +11,9 @@ Put the script in this folder someone on your $PATH, e.g. /usr/local/bin
 
 Syntax:
 
-git-latex-diff-compile   input_filename.tex   revision  output_filename.odf
+```
+    git-latex-diff-compile   input_filename.tex   revision  output_filename.pdf
+```
 
 where revision can be a git tag, branch name, or commit hash - see git documentation on finding these.
 
